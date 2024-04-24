@@ -9,7 +9,7 @@ from langchain.callbacks import get_openai_callback
 from src.mcqgenrator.mcqgenrator import generate_evaluate_chain
 from src.mcqgenrator.logger import logging
 
-with open('C:\Users\vktaw\Desktop\openai\mcqgen\Response.json','r') as f :
+with open(r'C:\Users\vktaw\Desktop\openai\mcqgen\Response.json', 'r') as f :
     Response_json = json.load(f)
 
 st.title("MCQ's creator application with langchain !!!")
@@ -28,7 +28,7 @@ with st.form("user_inputs") :
                 with get_openai_callback as cb :
                     response = generate_evaluate_chain(
                         {
-                           "model": "text-davinci-003",  # Use a valid model ID
+                           
                            "text": text,
                            "number": mcq_count,
                            "subject": subject,
